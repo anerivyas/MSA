@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html { 
+    background:url(images/abstract-cloudy-sky-textures-3.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	z-index:auto;
+}
+
+body {
+    color: black;
+    background-color: transparent;
+}
+
+#magic {
+	padding-left:9%;
+	width:90%;
+}
+
+#heading {
+	padding-left:27%;
+}
+
+#buttons {
+	
+	width:40%;
+	padding-left:9%;
+}
+
+#share {
+	padding-left:90%;
+}
+
+
+h1 {
+	color:rgba(0,0,0,1.00);
+}
+
+p {
+	color:rgba(94,92,92,1.00);
+	font-size:24px;
+}
