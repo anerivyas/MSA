@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html5>
 <html>
 <head>
 <meta charset="utf-8">
@@ -9,18 +9,26 @@
 <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="tts.js"></script>
+
+<script type="text/javascript" src="sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="sweetalert.css">
+
 <meta charset="UTF-8">
-<title>My Maps</title>
+<title>TextToSpeech</title>
 </head>
 
 <body>
 <div id="heading">
-  <h1 class="display-1"> TEXT TO SPEECH APPLICATION</h1>
-  <p><del>  We only have the option to read our text</del>.  Not now!</p>
-</div>
+  <h1 id="title"> TEXT TO SPEECH APPLICATION</h1>
+  <p>Input any text and we will translate it to speech for you.</p>
+  <br>
+ </div>
+ 
+
 
 <div id="magic">
-<textarea class="form-control" id="text" rows="17">Please insert text...</textarea>
+<input class ="btn btn-control"type="button" value="Clear" onclick="javascript:eraseText();">
+<textarea class="form-control" id="output" rows="14">Please insert text...</textarea>
 <br>
 </div>
 
@@ -29,27 +37,32 @@
 
 <br>
 <input class="btn btn-success"
-  onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+  onclick="responsiveVoice.speak($('#output').val(),$('#voiceselection').val());" 
   type="button" 
   value="Play" 
 />
 <input class="btn btn-warning"
-  onclick="responsiveVoice.pause($('#text').val(),$('#voiceselection').val());" 
+  onclick="responsiveVoice.pause($('#output').val(),$('#voiceselection').val());" 
   type="button" 
   value="Pause" 
 />
 <input class="btn btn-primary"
-  onclick="responsiveVoice.resume($('#text').val(),$('#voiceselection').val());" 
+  onclick="responsiveVoice.resume($('#output').val(),$('#voiceselection').val());" 
   type="button" 
   value="Resume" 
 />
 <input class="btn btn-danger"
-  onclick="responsiveVoice.cancel($('#text').val(),$('#voiceselection').val());" 
+  onclick="responsiveVoice.cancel($('#ouput').val(),$('#voiceselection').val());" 
   type="button" 
   value="Stop" 
 />
 
-
+   
+ <script> 
+ function eraseText() {
+    document.getElementById("output").value = "";
+}
+ </script>   
 
 </div>
 <script>
@@ -63,12 +76,33 @@
         responsiveVoice.pause();
         responsiveVoice.resume();
 </script>
-<div id="share">
-<a target="_blank" href="https://www.facebook.com/?stype=lo&jlou=AfdDulsk6MpYbTkBLG4ckyyUBTXJ5Tn5l6A2H7lGIBv5swbb4uca6-y7pBAl7mb7tP7SBFlj57KokbG_hyIkQPukl2IhP3SbiwUio2sQdrbktQ&smuh=62003&lh=Ac-BUcRpkKn5Ae6L"><img  src="images/black-facebook-icon-19.png" width="50" height="50" alt=""/></a>
 
-<a target="_blank" href="https://twitter.com/download?logged_out=1&lang=en"><img src="images/twitter-512.png" width="40" height="40" alt=""/></a>
+<ul id="navigation">
+ <li class="podcasts"><a title="Podcasts" target="_blank" href="images/fb.png"><img  src="images/black-facebook-icon-19.png" width="50" height="50" alt=""/></a></li><br>
+ <li class="contact">  <a title="Contact" target="_blank" href="https://twitter.com/download?logged_out=1&lang=en"><img src="images/twitter-512.png" width="40" height="40" alt=""/><br></a></li>
+</ul>
+
+<footer>
 
 </div>
+</footer>
+<br>
+<br>
+
+
+<script>
+$(function() {
+	$('#navigation a').stop().animate({'marginLeft':'-55px'},1000);
+ $('#navigation > li').hover(
+  function () {
+   $('a',$(this)).stop().animate({'marginLeft':'-2px'},200);
+  },
+  function () {
+   $('a',$(this)).stop().animate({'marginLeft':'-55px'},200);
+  }
+ );
+});
+</script>
 
 </body>
 </html>
