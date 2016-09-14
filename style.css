@@ -52,6 +52,11 @@ p {
 	font-size:24px;
 }
 
+#note {
+	font-size:14px;
+	color:rgba(255,255,255,1.00);
+}
+
 
 /* Share jQuery */
 ul#navigation {

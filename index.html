@@ -10,8 +10,6 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="tts.js"></script>
 
-<script type="text/javascript" src="sweetalert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="sweetalert.css">
 
 <meta charset="UTF-8">
 <title>TextToSpeech</title>
@@ -56,6 +54,7 @@
   type="button" 
   value="Stop" 
 />
+<p id="note"> *Please press play again if it speech doesn't begin at first. </p>
 
    
  
@@ -73,8 +72,8 @@
 </script>
 
 <ul id="navigation">
- <li class="podcasts"><a title="Podcasts" target="_blank" href="images/fb.png"><img  src="images/black-facebook-icon-19.png" width="50" height="50" alt=""/></a></li><br>
- <li class="contact">  <a title="Contact" target="_blank" href="https://twitter.com/download?logged_out=1&lang=en"><img src="images/twitter-512.png" width="40" height="40" alt=""/><br></a></li>
+ <li class="podcasts"><a title="Podcasts" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//avyatts.azurewebsites.net/"><img  src="images/black-facebook-icon-19.png" width="50" height="50" alt=""/></a></li><br>
+ <li class="contact">  <a title="Contact" target="_blank" href="https://twitter.com/home?status=http%3A//avyatts.azurewebsites.net/"><img src="images/twitter-512.png" width="40" height="40" alt=""/><br></a></li>
 </ul>
 
 <footer>
@@ -97,6 +96,12 @@ $(function() {
   }
  );
 });
+</script>
+
+<script> 
+function eraseText() {
+    document.getElementById("output").value = "";
+}
 </script>
 
 </body>
