@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="tts.js"></script>
+<script src="name.js"></script>
 
 
 <meta charset="UTF-8">
@@ -25,7 +25,7 @@
 
 
 <div id="magic">
-<input class ="btn btn-control"type="button" value="Clear" onclick="javascript:eraseText();">
+<input class ="btn btn-control"type="button" value="Clear" onclick="eraseText()">
 <textarea class="form-control" id="output" rows="14">Please insert text...</textarea>
 <br>
 </div>
@@ -35,22 +35,22 @@
 
 <br>
 <input class="btn btn-success"
-  onclick="responsiveVoice.speak($('#output').val(),$('#voiceselection').val());" 
+  onclick="play()" 
   type="button" 
   value="Play" 
 />
 <input class="btn btn-warning"
-  onclick="responsiveVoice.pause($('#output').val(),$('#voiceselection').val());" 
+  onclick="pause()" 
   type="button" 
   value="Pause" 
 />
 <input class="btn btn-primary"
-  onclick="responsiveVoice.resume($('#output').val(),$('#voiceselection').val());" 
+  onclick="resume()" 
   type="button" 
   value="Resume" 
 />
 <input class="btn btn-danger"
-  onclick="responsiveVoice.cancel($('#ouput').val(),$('#voiceselection').val());" 
+  onclick="cancel()" 
   type="button" 
   value="Stop" 
 />
@@ -63,17 +63,7 @@
    
  
 </div>
-<script>
-        //Populate voice selection dropdown
-        var voicelist = responsiveVoice.getVoices();
-        var vselect = $("#voiceselection");
-        $.each(voicelist, function() {
-                vselect.append($("<option />").val(this.name).text(this.name));
-        });
-		responsiveVoice.cancel();
-        responsiveVoice.pause();
-        responsiveVoice.resume();
-</script>
+
 
 <ul id="navigation">
  <li class="podcasts"><a title="Podcasts" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//avyatts.azurewebsites.net/"><img  src="images/black-facebook-icon-19.png" width="50" height="50" alt=""/></a></li><br>
@@ -97,12 +87,16 @@ $(function() {
  );
 });
 </script>
+<!--<script>
+var voicelist = responsiveVoice.getVoices();
+var vselect = $("#voiceselection");
+$.each(voicelist, function () {
+    vselect.append($("<option />").val(this.name).text(this.name));
+});
+responsiveVoice.cancel();
+responsiveVoice.pause();
+responsiveVoice.resume();</script> -->
 
-<script> 
-function eraseText() {
-    document.getElementById("output").value = "";
-}
-</script>
 
 <!-- 
 
