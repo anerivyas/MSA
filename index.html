@@ -19,7 +19,6 @@
 <div id="heading">
   <h1 id="title"> TEXT TO SPEECH APPLICATION</h1>
   <p>Input any text and we will translate it to speech for you.</p>
-  <br>
  </div>
  
 
@@ -31,7 +30,8 @@
 </div>
 
 <div id="buttons">
-<select class="form-control" id="voiceselection"></select> 
+  <p id="note"> Click the bar below to view language options. </p>
+<select class="form-control" id="voiceselection" onclick="select()"></select> 
 
 <br>
 <input class="btn btn-success"
@@ -87,15 +87,8 @@ $(function() {
  );
 });
 </script>
-<!--<script>
-var voicelist = responsiveVoice.getVoices();
-var vselect = $("#voiceselection");
-$.each(voicelist, function () {
-    vselect.append($("<option />").val(this.name).text(this.name));
-});
-responsiveVoice.cancel();
-responsiveVoice.pause();
-responsiveVoice.resume();</script> -->
+
+
 
 
 <!-- 
